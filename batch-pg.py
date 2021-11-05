@@ -3,6 +3,7 @@ Trains an Agent With Stochastic Policy Gradient Ascent to Solve the Lunar Lander
 Challenge From OpenAI
 """
 
+import csv
 import gym
 import numpy as np
 import os
@@ -17,7 +18,7 @@ envName = "LunarLander-v2"
 batchSize = 10  # every how many episodes do we update parameters?
 gamma = 0.99    # discount factor for rewards
 resume = True   # resume from previous checkpoint if possible?
-render = False  # render out the game on-screen?
+render = True   # render out the game on-screen?
 
 # π_θ(a|s) is approximated by a neural network
 class PolicyNetwork(nn.Module):
@@ -70,7 +71,7 @@ sumRewards = 0
 numEpisode = 0
 
 while True:
-    if render and numEpisode % 100 == 0:
+    if render and numEpisode % 10 == 0:
         env.render()
     
     # sample an action from the policy network's output, which is a probability
@@ -131,7 +132,11 @@ while True:
         print(
             f"episode {numEpisode:6d} --- total reward: {sumRewards:7.2f} --- running average: {runningReward:7.2f}"
         )
-        
+        # logging in csv
+        fields = [numEpisode, sumRewards, runningReward]
+        with open('iter-data.csv', 'a', newline='') as f:
+            writer = csv.writer(f)
+            writer.writerow(fields)
         # reset environment
         sumRewards = 0
         state = env.reset()
