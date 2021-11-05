@@ -28,7 +28,7 @@ In order to "solve" the environment, the agent needs to complete the episode wit
 Since the agent can only take one of four actions, <b>a</b>, at each time step <b>t</b>, a natural choice of policy would yield probabilities of each action as its output, given an input state, <b>s</b>. Namely, the policy, <b>π<sub>θ</sub>(a|s)</b>, chosen for the agent is a neural network function approximator, designed to more closely approximate the optimal policy <b>π\*(a|s)</b> of the agent as it trains over more and more episodes. Here, <b>θ</b> represents the parameters of the neural network that are initially randomized but improve over time to produce more optimal actions, meaning those actions that lead to more cumulative reward over time. Each hidden layer of the neural network uses a ReLU activation. The last layer is a softmax layer of four neurons, meaning each neuron outputs the probability that its corresponding action will be selected.
 
 <p align="center">
-    <img src="https://dr3ngl797z54v.cloudfront.net/lunar_lander_nn.png" width="50%" alt="neural-network">
+    <img src="https://dr3ngl797z54v.cloudfront.net/lunar_lander_nn.png" width="80%" alt="neural-network">
 </p>
 
 Now that the agent has a stochastic mechanism to select output actions given an input state, it begs the question as to how the policy itself improves over episodes. At the end of each episode, the reward, <b>G<sub>t</sub></b>, due to selecting a specific action, <b>a<sub>t</sub></b>, at time <b>t</b> during the episode can be expressed as follows:
@@ -48,19 +48,19 @@ where the advantage function is given by the total reward <b>G<sub>t</sub></b> p
 Solving the Lunar Lander challenge requires safely landing the spacecraft between two flag posts while consuming limited fuel. The agent's ability to do this was quite abysmal in the beginning.
 
 <p align="center">
-    <img src="https://dr3ngl797z54v.cloudfront.net/lunar_lander_crash.gif" width="50%" alt="failure...">'
+    <img src="https://dr3ngl797z54v.cloudfront.net/lunar_lander_crash.gif" width="80%" alt="failure...">'
 </p>
 
 After training the agent overnight on a GPU, it could gracefully complete the challenge with ease!
 
 <p align="center">
-    <img src="https://dr3ngl797z54v.cloudfront.net/lunar_lander_success.gif" width="50%" alt="success!">
+    <img src="https://dr3ngl797z54v.cloudfront.net/lunar_lander_success.gif" width="80%" alt="success!">
 </p>
 
 Below, the performance of the agent over 214,000 episodes is documented. The light-blue line indicates individual episodic performance, and the black line is a 100-period moving average of performance. The red line marks the 200 point success threshold.
 
 <p align="center">
-    <img src="https://dr3ngl797z54v.cloudfront.net/lunar_lander_results.png" width="50%" alt="training-results">
+    <img src="https://dr3ngl797z54v.cloudfront.net/lunar_lander_results.png" width="80%" alt="training-results">
 </p>
 
 It took a little over 17,000 episodes before the agent completed the challenge with a total reward of at least 200 points. After around 25,000 episodes, its average performance began to stabilize, yet, it should be noted that there remained a high amount of variance between individual episodes. In particular, even within the last 15,000 episodes of training, the agent failed roughly 5% of the time. Although the agent could easily conquer the challenge, it occasionally could not prevent making decisions that would eventually lead to disastrous consequences.
