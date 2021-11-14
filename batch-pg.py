@@ -53,8 +53,8 @@ def discountRewards(r: np.ndarray):
     discountedRewards = np.zeros(r.size)
     # G_0 = r_0 + γ*r_1 + (γ**2)*r_2 + (γ**3)*r_3 + ...
     #     = r_0 + γ(r_1 + γ*r_2 + (γ**2)*r_3 + ...)
-    #     = r_0 + γ*V_1
-    # G_t = r_t + γ*V_{t + 1}
+    #     = r_0 + γ*G_1
+    # G_t = r_t + γ*G_{t + 1}
     valueNext = 0
     for t in reversed(range(0, r.size)):
         discountedRewards[t] = r[t] + gamma*valueNext
