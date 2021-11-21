@@ -63,7 +63,7 @@ Below, the performance of the agent over 214,000 episodes is documented. The lig
     <img src="https://dr3ngl797z54v.cloudfront.net/lunar_lander_results.png" width="80%" alt="training-results">
 </p>
 
-It took a little over 17,000 episodes before the agent completed the challenge with a total reward of at least 200 points. After around 25,000 episodes, its average performance began to stabilize, yet, it should be noted that there remained a high amount of variance between individual episodes. In particular, even within the last 15,000 episodes of training, the agent failed roughly 5% of the time. Although the agent could easily conquer the challenge, it occasionally could not prevent making decisions that would eventually lead to disastrous consequences.
+It took a little over 17,000 episodes before the agent completed the challenge with a total reward of at least 200 points. After around 25,000 episodes, its average performance began to stabilize, yet, it should be noted that there remained a high amount of variance between individual episodes. In particular, even within the last 15,000 episodes of training, the agent failed roughly 5% of the time. Although the agent could easily conquer the challenge, it occasionally could not prevent making decisions that would eventually lead to disastrous consequences. Further training showed no significant improvement in performance (not shown).
 
 # Discussion
 
