@@ -41,7 +41,7 @@ Then, the goal is to change the parameters to increase the expectation of future
 
 <p align="center"><b>grad = E<sub>t</sub> [ ∇<sub>θ</sub> log( π<sub>θ</sub>( a<sub>t</sub> | s<sub>t</sub> ) ) G<sub>t</sub> ]</b></p>
 
-where the advantage function is given by the total reward <b>G<sub>t</sub></b> produced by the action <b>a<sub>t</sub></b>. Updating the parameters in the direction of the gradient has the net effect of increasing the likelihood of taking actions that were eventually rewarded and decreasing the likelihood of taking actions that were eventually penalized. This is possible because <b>G<sub>t</sub></b> takes into account all the future rewards received as well as the immediate reward.
+where <b>G<sub>t</sub></b> is the total reward produced by the action <b>a<sub>t</sub></b>. Updating the parameters in the direction of the gradient has the net effect of increasing the likelihood of taking actions that were eventually rewarded and decreasing the likelihood of taking actions that were eventually penalized. This is possible because <b>G<sub>t</sub></b> takes into account all the future rewards received as well as the immediate reward.
 
 # Results
 
