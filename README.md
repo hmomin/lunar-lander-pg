@@ -69,7 +69,7 @@ It took a little over 17,000 episodes before the agent completed the challenge w
 
 One caveat with this specific implementation is that it only works with a discrete action space. However, it is possible to adapt the same algorithm to work with a continuous action space. In order to do so, the softmax output layer would have to transform into a sigmoid or tanh layer, nulling the idea that the output layer corresponds to probabilities. Each output neuron would now correspond to the mean, μ, of the (assumed) Gaussian distribution to which each action belongs. In essence, the distributional means themselves would be functions of the input state.
 
-The training process would then consist of updating parameters such that the means shift to favor actions that result in eventual rewards and disfavor actions that are eventually penalized. While it is possible to adapt the algorithm to support continuous action spaces, it has been noted to have relatively poor or limited performance in practice. In actual scenarios involving continuous action spaces, it would almost certainly be preferable to use DDPG, PPO, or a similar algorithm.
+The training process would then consist of updating parameters such that the means shift to favor actions that result in eventual rewards and disfavor actions that are eventually penalized. While it is possible to adapt the algorithm to support continuous action spaces, it has been noted to have relatively poor or limited performance in practice. In actual scenarios involving continuous action spaces, it would almost certainly be preferable to use DDPG, TD3, or a similar algorithm.
 
 # References
 
