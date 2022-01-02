@@ -78,7 +78,7 @@ The training process would then consist of updating parameters such that the mea
 - [The Likelihood-Ratio Gradient - Tim Vieira](https://timvieira.github.io/blog/post/2019/04/20/the-likelihood-ratio-gradient/)
 - [Policy Gradient Loss with Continuous Action Spaces - Stack Overflow Post](https://ai.stackexchange.com/questions/23847/what-is-the-loss-for-policy-gradients-with-continuous-actions)
 - [Continuous Control With Deep Reinforcement Learning - Timothy P. Lillicrap et al.](https://arxiv.org/abs/1509.02971)
-- [Proximal Policy Optimization Algorithms - John Schulman et al.](https://arxiv.org/abs/1707.06347)
+- [Addressing Function Approximation Error in Actor-Critic Methods - Fujimoto et al.](https://arxiv.org/abs/1802.09477)
 
 # License
 
